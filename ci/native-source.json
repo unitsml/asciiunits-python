@@ -1,0 +1,35 @@
+{
+  "package": "asciiunits",
+  "planned_repository": "unitsml/asciiunits-python",
+  "qualified_source_head": "5c185e271220604648da2a036b4dc94c729fa952",
+  "rust_toolchain": "1.95.0",
+  "native": {
+    "kind": "cargo-build",
+    "repository": "unitsml/asciiunits-rs",
+    "local": "workspace/units-native/asciiunits-rs",
+    "revision": "498cec2ce946c7bcb3b1b26313667b188ddf76aa",
+    "public": false,
+    "deps": {
+      "parsanol_rs": {
+        "repository": "parsanol/parsanol-rs",
+        "revision": "20d5e6cebcade3cf2111a00a7ef3f5b69d673481",
+        "public": true
+      },
+      "asciiunits_artifact": {
+        "repository": "unitsml/asciiunits-ts",
+        "revision": "ff147f2ddce859112bf4d6583374124979dedf08",
+        "public": false,
+        "note": "public once root pushes fork suleman-uzair/asciiunits-ts 521c0bd (U16 PR15 step 1)"
+      }
+    }
+  },
+  "data": null,
+  "tests": [
+    "tests/test_installed.py"
+  ],
+  "python_runtime": {
+    "repository": "parsanol/parsanol-python",
+    "revision": "7bb1e554ec29dcd82ee7a2c467bc46309170ceeb",
+    "note": "only for packages that load Parsanol at runtime; none of these five does (native stages are self-contained)"
+  }
+}
