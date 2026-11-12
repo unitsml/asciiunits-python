@@ -1,0 +1,13 @@
+{
+  "artifact_source": "ff147f2ddce859112bf4d6583374124979dedf08",
+  "artifact_sha256": "139d91337a0944d60f36bc144a205625349f4b3b8b7ff1a0fba3c61e70c57804",
+  "edition": 2,
+  "corpus_source": "3134bd30753b709bd638c123963fec48a9416deb",
+  "corpus_sha256": "9b487501ae48b7f23a2f747002c83259a240607831030803dec2ee2a02a4eeda",
+  "parsanol": "20d5e6cebcade3cf2111a00a7ef3f5b69d673481",
+  "mapper_source_sha256": "bb12937a421f6b536758a96d905780008c8d90935dc028f3ee62860cdff5ae9a",
+  "model_source_sha256": "03b4d13180f4ed5c528344e4cf397a67c86a4a69e8d276f991c68859d16f78c3",
+  "mapper_dist_sha256": "1f295006530c218d28b5ad121755ee4852c9b5d95b4b91bce5eef2f87d2da5d7",
+  "model_oracle_sha256": "ac1000c7e44528489bb87965ad318cd0b1613cd742209f5dff9f25c83e853d2c",
+  "native_source_commit": "498cec2ce946c7bcb3b1b26313667b188ddf76aa"
+}

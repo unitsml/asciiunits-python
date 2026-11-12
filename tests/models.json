@@ -1,0 +1,1476 @@
+[
+  {
+    "input": "m",
+    "model": {
+      "unitName": "m"
+    }
+  },
+  {
+    "input": "mm",
+    "model": {
+      "unitName": "m",
+      "prefix": {
+        "prefixName": "m",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "um",
+    "model": {
+      "unitName": "m",
+      "prefix": {
+        "prefixName": "u",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "degK",
+    "model": {
+      "unitName": "degK"
+    }
+  },
+  {
+    "input": "kg",
+    "model": {
+      "unitName": "g",
+      "prefix": {
+        "prefixName": "k",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "mm*s^-2",
+    "model": {
+      "value": [
+        {
+          "unitName": "m",
+          "prefix": {
+            "prefixName": "m",
+            "onlyInstance": false
+          }
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s",
+          "powerNumerator": {
+            "value": "-2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "sqrt(Hz)",
+    "model": {
+      "value": {
+        "unitName": "Hz"
+      }
+    }
+  },
+  {
+    "input": "K/(kg*m)",
+    "model": {
+      "value": [
+        {
+          "unitName": "K"
+        },
+        {
+          "text": "/"
+        },
+        {
+          "value": [
+            {
+              "unitName": "g",
+              "prefix": {
+                "prefixName": "k",
+                "onlyInstance": false
+              }
+            },
+            {
+              "text": "*"
+            },
+            {
+              "unitName": "m"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "cal_th/cm^2",
+    "model": {
+      "value": [
+        {
+          "unitName": "cal_th"
+        },
+        {
+          "text": "/"
+        },
+        {
+          "unitName": "m",
+          "powerNumerator": {
+            "value": "2"
+          },
+          "prefix": {
+            "prefixName": "c",
+            "onlyInstance": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "Hz^10*darcy^100",
+    "model": {
+      "value": [
+        {
+          "unitName": "Hz",
+          "powerNumerator": {
+            "value": "10"
+          }
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "darcy",
+          "powerNumerator": {
+            "value": "100"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "A*C^3",
+    "model": {
+      "value": [
+        {
+          "unitName": "A"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "C",
+          "powerNumerator": {
+            "value": "3"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "A/C^-3",
+    "model": {
+      "value": [
+        {
+          "unitName": "A"
+        },
+        {
+          "text": "/"
+        },
+        {
+          "unitName": "C",
+          "powerNumerator": {
+            "value": "-3"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "J/kg*K",
+    "model": {
+      "value": [
+        {
+          "unitName": "J"
+        },
+        {
+          "text": "/"
+        },
+        {
+          "value": [
+            {
+              "unitName": "g",
+              "prefix": {
+                "prefixName": "k",
+                "onlyInstance": false
+              }
+            },
+            {
+              "text": "*"
+            },
+            {
+              "unitName": "K"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "dim_Theta*dim_L^2",
+    "model": {
+      "value": [
+        {
+          "dimensionName": "dim_Theta"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "dimensionName": "dim_L",
+          "powerNumerator": {
+            "value": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "kg^-2",
+    "model": {
+      "unitName": "g",
+      "powerNumerator": {
+        "value": "-2"
+      },
+      "prefix": {
+        "prefixName": "k",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "mW*cm^(-2)",
+    "model": {
+      "value": [
+        {
+          "unitName": "W",
+          "prefix": {
+            "prefixName": "m",
+            "onlyInstance": false
+          }
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "m",
+          "powerNumerator": {
+            "value": "-2"
+          },
+          "prefix": {
+            "prefixName": "c",
+            "onlyInstance": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "p-",
+    "model": {
+      "prefixName": "p",
+      "onlyInstance": false
+    }
+  },
+  {
+    "input": "k-",
+    "model": {
+      "prefixName": "k",
+      "onlyInstance": false
+    }
+  },
+  {
+    "input": "1",
+    "model": {
+      "unitName": "1"
+    }
+  },
+  {
+    "input": "(m)(s)",
+    "model": {
+      "value": [
+        {
+          "open": "(",
+          "value": {
+            "unitName": "m"
+          },
+          "close": ")"
+        },
+        {
+          "open": "(",
+          "value": {
+            "unitName": "s"
+          },
+          "close": ")"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m(s)",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "open": "(",
+          "value": {
+            "unitName": "s"
+          },
+          "close": ")"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m s",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": " "
+        },
+        {
+          "unitName": "s"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m *s",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m* s",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m  s",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "  "
+        },
+        {
+          "unitName": "s"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m * s",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s"
+        }
+      ]
+    }
+  },
+  {
+    "input": "km//s",
+    "model": {
+      "value": [
+        {
+          "unitName": "m",
+          "prefix": {
+            "prefixName": "k",
+            "onlyInstance": false
+          }
+        },
+        {
+          "text": "//"
+        },
+        {
+          "unitName": "s"
+        }
+      ]
+    }
+  },
+  {
+    "input": "s^-2//m",
+    "model": {
+      "value": [
+        {
+          "unitName": "s",
+          "powerNumerator": {
+            "value": "-2"
+          }
+        },
+        {
+          "text": "//"
+        },
+        {
+          "unitName": "m"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m sqrt(Hz)",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": " "
+        },
+        {
+          "value": {
+            "unitName": "Hz"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "(m^2*s^-1)//kg",
+    "model": {
+      "value": [
+        {
+          "value": [
+            {
+              "unitName": "m",
+              "powerNumerator": {
+                "value": "2"
+              }
+            },
+            {
+              "text": "*"
+            },
+            {
+              "unitName": "s",
+              "powerNumerator": {
+                "value": "-1"
+              }
+            }
+          ]
+        },
+        {
+          "text": "//"
+        },
+        {
+          "unitName": "g",
+          "prefix": {
+            "prefixName": "k",
+            "onlyInstance": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "dim_L",
+    "model": {
+      "dimensionName": "dim_L"
+    }
+  },
+  {
+    "input": "(dim_L*dim_M)/dim_T^2",
+    "model": {
+      "value": [
+        {
+          "value": [
+            {
+              "dimensionName": "dim_L"
+            },
+            {
+              "text": "*"
+            },
+            {
+              "dimensionName": "dim_M"
+            }
+          ]
+        },
+        {
+          "text": "/"
+        },
+        {
+          "dimensionName": "dim_T",
+          "powerNumerator": {
+            "value": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "sqrt(dim_M)",
+    "model": {
+      "value": {
+        "dimensionName": "dim_M"
+      }
+    }
+  },
+  {
+    "input": "sqrt(m*s)",
+    "model": {
+      "value": {
+        "value": [
+          {
+            "unitName": "m"
+          },
+          {
+            "text": "*"
+          },
+          {
+            "unitName": "s"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": "sqrt((m))",
+    "model": {
+      "value": {
+        "unitName": "m"
+      }
+    }
+  },
+  {
+    "input": "(sqrt(m))",
+    "model": {
+      "value": {
+        "unitName": "m"
+      }
+    }
+  },
+  {
+    "input": "sqrt(m)s",
+    "model": {
+      "sqrt": {
+        "unitName": "m"
+      },
+      "sequence": {
+        "unitName": "s"
+      }
+    }
+  },
+  {
+    "input": "m^2*s",
+    "model": {
+      "value": [
+        {
+          "unitName": "m",
+          "powerNumerator": {
+            "value": "2"
+          }
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m^-1/2",
+    "model": {
+      "unitName": "m",
+      "powerNumerator": {
+        "value": "-1/2"
+      }
+    }
+  },
+  {
+    "input": "m^(-1/2)",
+    "model": {
+      "unitName": "m",
+      "powerNumerator": {
+        "value": "-1/2"
+      }
+    }
+  },
+  {
+    "input": "m^(1/2)",
+    "model": {
+      "unitName": "m",
+      "powerNumerator": {
+        "value": "1/2"
+      }
+    }
+  },
+  {
+    "input": "(m)(s)(A)",
+    "model": {
+      "implicit_extended": {
+        "value": [
+          {
+            "open": "(",
+            "value": {
+              "unitName": "m"
+            },
+            "close": ")"
+          },
+          {
+            "open": "(",
+            "value": {
+              "unitName": "s"
+            },
+            "close": ")"
+          }
+        ]
+      },
+      "sequence": {
+        "unitName": "A"
+      }
+    }
+  },
+  {
+    "input": "1m",
+    "model": {
+      "unit": {
+        "value": "1",
+        "offset": 0,
+        "length": 1,
+        "line": 1,
+        "column": 1
+      },
+      "sequence": {
+        "unitName": "m"
+      }
+    }
+  },
+  {
+    "input": "1*m",
+    "model": {
+      "value": [
+        {
+          "unitName": "1"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "m"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m*1",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "1"
+        }
+      ]
+    }
+  },
+  {
+    "input": "((m))",
+    "model": {
+      "open": "(",
+      "value": {
+        "unitName": "m"
+      },
+      "close": ")"
+    }
+  },
+  {
+    "input": "dim_L dim_M",
+    "model": {
+      "value": [
+        {
+          "dimensionName": "dim_L"
+        },
+        {
+          "text": " "
+        },
+        {
+          "dimensionName": "dim_M"
+        }
+      ]
+    }
+  },
+  {
+    "input": "(dim_L)(dim_M)",
+    "model": {
+      "value": [
+        {
+          "open": "(",
+          "value": {
+            "dimensionName": "dim_L"
+          },
+          "close": ")"
+        },
+        {
+          "open": "(",
+          "value": {
+            "dimensionName": "dim_M"
+          },
+          "close": ")"
+        }
+      ]
+    }
+  },
+  {
+    "input": "(dim_L)*dim_M",
+    "model": {
+      "value": [
+        {
+          "dimensionName": "dim_L"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "dimensionName": "dim_M"
+        }
+      ]
+    }
+  },
+  {
+    "input": "k-",
+    "model": {
+      "prefixName": "k",
+      "onlyInstance": false
+    }
+  },
+  {
+    "input": "da-",
+    "model": {
+      "prefixName": "da",
+      "onlyInstance": false
+    }
+  },
+  {
+    "input": "M-",
+    "model": {
+      "prefixName": "M",
+      "onlyInstance": false
+    }
+  },
+  {
+    "input": "s^2/m^2",
+    "model": {
+      "value": [
+        {
+          "unitName": "s",
+          "powerNumerator": {
+            "value": "2"
+          }
+        },
+        {
+          "text": "/"
+        },
+        {
+          "unitName": "m",
+          "powerNumerator": {
+            "value": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "m/s^2",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "/"
+        },
+        {
+          "unitName": "s",
+          "powerNumerator": {
+            "value": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "K*kg^0",
+    "model": {
+      "value": [
+        {
+          "unitName": "K"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "g",
+          "powerNumerator": {
+            "value": "0"
+          },
+          "prefix": {
+            "prefixName": "k",
+            "onlyInstance": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "Hz^-10",
+    "model": {
+      "unitName": "Hz",
+      "powerNumerator": {
+        "value": "-10"
+      }
+    }
+  },
+  {
+    "input": "um^3",
+    "model": {
+      "unitName": "m",
+      "powerNumerator": {
+        "value": "3"
+      },
+      "prefix": {
+        "prefixName": "u",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "mmol",
+    "model": {
+      "unitName": "mol",
+      "prefix": {
+        "prefixName": "m",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "nm",
+    "model": {
+      "unitName": "m",
+      "prefix": {
+        "prefixName": "n",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "kat",
+    "model": {
+      "unitName": "kat"
+    }
+  },
+  {
+    "input": "Bq*Sv^2",
+    "model": {
+      "value": [
+        {
+          "unitName": "Bq"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "Sv",
+          "powerNumerator": {
+            "value": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "ft*lb/s^2",
+    "model": {
+      "value": [
+        {
+          "unitName": "ft"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "value": [
+            {
+              "unitName": "lb"
+            },
+            {
+              "text": "/"
+            },
+            {
+              "unitName": "s",
+              "powerNumerator": {
+                "value": "2"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "mu*s",
+    "model": {
+      "value": [
+        {
+          "unitName": "u",
+          "prefix": {
+            "prefixName": "m",
+            "onlyInstance": false
+          }
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s"
+        }
+      ]
+    }
+  },
+  {
+    "input": "m*s^-3*K^4",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "value": [
+            {
+              "unitName": "s",
+              "powerNumerator": {
+                "value": "-3"
+              }
+            },
+            {
+              "text": "*"
+            },
+            {
+              "unitName": "K",
+              "powerNumerator": {
+                "value": "4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "sqrt(m*s^-1)",
+    "model": {
+      "value": {
+        "value": [
+          {
+            "unitName": "m"
+          },
+          {
+            "text": "*"
+          },
+          {
+            "unitName": "s",
+            "powerNumerator": {
+              "value": "-1"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": "cm^(3)",
+    "model": {
+      "unitName": "m",
+      "powerNumerator": {
+        "value": "3"
+      },
+      "prefix": {
+        "prefixName": "c",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "cal_th/cm^2 h",
+    "model": {
+      "value": [
+        {
+          "unitName": "cal_th"
+        },
+        {
+          "text": "/"
+        },
+        {
+          "value": [
+            {
+              "unitName": "m",
+              "powerNumerator": {
+                "value": "2"
+              },
+              "prefix": {
+                "prefixName": "c",
+                "onlyInstance": false
+              }
+            },
+            {
+              "text": " "
+            },
+            {
+              "unitName": "h"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "(a_year*s^-1)",
+    "model": {
+      "value": [
+        {
+          "unitName": "a_year"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s",
+          "powerNumerator": {
+            "value": "-1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "sqrt(sqrt(m))",
+    "model": {
+      "value": {
+        "value": {
+          "unitName": "m"
+        }
+      }
+    }
+  },
+  {
+    "input": "ton-force (2000 lb)",
+    "model": {
+      "unitName": "ton-force (2000 lb)"
+    }
+  },
+  {
+    "input": "ton-force (2000 lb)*m",
+    "model": {
+      "value": [
+        {
+          "unitName": "ton-force (2000 lb)"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "m"
+        }
+      ]
+    }
+  },
+  {
+    "input": "ton-force (2000 lb)^2",
+    "model": {
+      "unitName": "ton-force (2000 lb)",
+      "powerNumerator": {
+        "value": "2"
+      }
+    }
+  },
+  {
+    "input": "m//s//kg",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "//"
+        },
+        {
+          "value": [
+            {
+              "unitName": "s"
+            },
+            {
+              "text": "//"
+            },
+            {
+              "unitName": "g",
+              "prefix": {
+                "prefixName": "k",
+                "onlyInstance": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "m/s/kg",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "/"
+        },
+        {
+          "value": [
+            {
+              "unitName": "s"
+            },
+            {
+              "text": "/"
+            },
+            {
+              "unitName": "g",
+              "prefix": {
+                "prefixName": "k",
+                "onlyInstance": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "m*s^(1)",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s",
+          "powerNumerator": {
+            "value": "1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "m*s^(-1)",
+    "model": {
+      "value": [
+        {
+          "unitName": "m"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s",
+          "powerNumerator": {
+            "value": "-1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "Mt",
+    "model": {
+      "unitName": "t",
+      "prefix": {
+        "prefixName": "M",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "dB",
+    "model": {
+      "unitName": "dB"
+    }
+  },
+  {
+    "input": "dB^2",
+    "model": {
+      "unitName": "dB",
+      "powerNumerator": {
+        "value": "2"
+      }
+    }
+  },
+  {
+    "input": "dB*m",
+    "model": {
+      "value": [
+        {
+          "unitName": "dB"
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "m"
+        }
+      ]
+    }
+  },
+  {
+    "input": "mbar*s^-2",
+    "model": {
+      "value": [
+        {
+          "unitName": "bar",
+          "prefix": {
+            "prefixName": "m",
+            "onlyInstance": false
+          }
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s",
+          "powerNumerator": {
+            "value": "-2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "kgf",
+    "model": {
+      "unitName": "gf",
+      "prefix": {
+        "prefixName": "k",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "kgf*m/s^2",
+    "model": {
+      "value": [
+        {
+          "unitName": "gf",
+          "prefix": {
+            "prefixName": "k",
+            "onlyInstance": false
+          }
+        },
+        {
+          "text": "*"
+        },
+        {
+          "value": [
+            {
+              "unitName": "m"
+            },
+            {
+              "text": "/"
+            },
+            {
+              "unitName": "s",
+              "powerNumerator": {
+                "value": "2"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "input": "mbar",
+    "model": {
+      "unitName": "bar",
+      "prefix": {
+        "prefixName": "m",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "cSt",
+    "model": {
+      "unitName": "St",
+      "prefix": {
+        "prefixName": "c",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "uin",
+    "model": {
+      "unitName": "in",
+      "prefix": {
+        "prefixName": "u",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "mL",
+    "model": {
+      "unitName": "L",
+      "prefix": {
+        "prefixName": "m",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "ml",
+    "model": {
+      "unitName": "l",
+      "prefix": {
+        "prefixName": "m",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "kcal_th/cm^2",
+    "model": {
+      "value": [
+        {
+          "unitName": "cal_th",
+          "prefix": {
+            "prefixName": "k",
+            "onlyInstance": false
+          }
+        },
+        {
+          "text": "/"
+        },
+        {
+          "unitName": "m",
+          "powerNumerator": {
+            "value": "2"
+          },
+          "prefix": {
+            "prefixName": "c",
+            "onlyInstance": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "kcal_IT",
+    "model": {
+      "unitName": "cal_IT",
+      "prefix": {
+        "prefixName": "k",
+        "onlyInstance": false
+      }
+    }
+  },
+  {
+    "input": "cP*s^-1",
+    "model": {
+      "value": [
+        {
+          "unitName": "P",
+          "prefix": {
+            "prefixName": "c",
+            "onlyInstance": false
+          }
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "s",
+          "powerNumerator": {
+            "value": "-1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "input": "kg*m^(-2)",
+    "model": {
+      "value": [
+        {
+          "unitName": "g",
+          "prefix": {
+            "prefixName": "k",
+            "onlyInstance": false
+          }
+        },
+        {
+          "text": "*"
+        },
+        {
+          "unitName": "m",
+          "powerNumerator": {
+            "value": "-2"
+          }
+        }
+      ]
+    }
+  }
+]
