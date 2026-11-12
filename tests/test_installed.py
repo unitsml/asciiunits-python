@@ -1,4 +1,5 @@
 from ctypes import string_at
+from importlib.resources import files
 import json
 from pathlib import Path
 import unittest
@@ -53,6 +54,19 @@ class InstalledRuntimeTests(unittest.TestCase):
                 library.asciiunits_free_json_v1(pointer)
         self.assertEqual(asciiunits.parse("m"), {"unitName": "m"})
 
+
+    def test_build_receipt_and_parsanol_notice(self):
+        native = files("asciiunits").joinpath("_native")
+        info = json.loads(native.joinpath("build-info.json").read_bytes())
+        self.assertEqual(info["native_source_commit"], "1f771caef878b9d383a5f29b02f434b8b614b780")
+        self.assertEqual(info["parsanol"], "5206a33b5417b4ecd3a601930461ed2967c871e7")
+        self.assertEqual(info["cargo_lock_sha256"], "714aad1f4ff4ef003ea791fff8bff062edb76f966fb6a699979b2bf28b01ee3b")
+        notices = json.loads(native.joinpath("licenses", "manifest.json").read_bytes())
+        parsanol = [row for row in notices if row["name"] == "parsanol"]
+        self.assertEqual([row["version"] for row in parsanol], ["0.20.14"])
+        self.assertTrue(parsanol[0]["notices"])
+        for path in parsanol[0]["notices"]:
+            self.assertTrue(native.joinpath("licenses", *path.replace("\\", "/").split("/")).is_file())
 
 if __name__ == "__main__":
     unittest.main()
