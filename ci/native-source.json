@@ -7,12 +7,12 @@
     "kind": "cargo-build",
     "repository": "unitsml/asciiunits-rs",
     "local": "workspace/units-native/asciiunits-rs",
-    "revision": "498cec2ce946c7bcb3b1b26313667b188ddf76aa",
-    "public": false,
+    "revision": "1f771caef878b9d383a5f29b02f434b8b614b780",
+    "public": true,
     "deps": {
       "parsanol_rs": {
         "repository": "parsanol/parsanol-rs",
-        "revision": "20d5e6cebcade3cf2111a00a7ef3f5b69d673481",
+        "revision": "5206a33b5417b4ecd3a601930461ed2967c871e7",
         "public": true
       },
       "asciiunits_artifact": {
