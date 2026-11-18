@@ -7,7 +7,10 @@ import json
 import os
 from pathlib import Path
 
-__all__ = ["AsciiUnitsError", "ParseError", "ResourceLimitError", "NativeRuntimeError", "parse", "parse_shape", "try_parse"]
+__all__ = [
+    "AsciiUnitsError", "ParseError", "ResourceLimitError", "NativeRuntimeError",
+    "parse", "parse_shape", "try_parse", "parse_model", "to_portable_json",
+]
 
 
 class AsciiUnitsError(Exception):
@@ -66,6 +69,10 @@ def _library():
             raise _runtime_error("Unsupported AsciiUnits C ABI version")
         lib.asciiunits_parse_json_v1.argtypes = [c_char_p, c_size_t, c_uint32]
         lib.asciiunits_parse_json_v1.restype = c_void_p
+        model = getattr(lib, "asciiunits_parse_model_json_v1", None)
+        if model is not None:
+            model.argtypes = [c_char_p, c_size_t]
+            model.restype = c_void_p
         lib.asciiunits_free_json_v1.argtypes = [c_void_p]
         lib.asciiunits_free_json_v1.restype = None
         return lib
@@ -73,12 +80,12 @@ def _library():
         raise _runtime_error(f"Could not load AsciiUnits runtime: {error}") from error
 
 
-def _parse(text, mode):
+def _call(text, native):
     if not isinstance(text, str):
         raise TypeError("AsciiUnits input must be str")
     source = text.encode("utf-8")
     lib = _library()
-    pointer = lib.asciiunits_parse_json_v1(source, len(source), mode)
+    pointer = native(lib, source)
     if not pointer:
         raise _runtime_error("Native runtime returned a null response")
     try:
@@ -89,8 +96,8 @@ def _parse(text, mode):
         lib.asciiunits_free_json_v1(pointer)
     if not isinstance(reply, dict) or reply.get("abi_version") != 1:
         raise _runtime_error("Native runtime returned an invalid ABI envelope")
-    if reply.get("ok") is True and "value" in reply:
-        return reply["value"]
+    if reply.get("ok") is True and ("value" in reply or "model" in reply):
+        return reply["value"] if "value" in reply else reply["model"]
     error = reply.get("error")
     if reply.get("ok") is not False or not isinstance(error, dict) or "category" not in error:
         raise _runtime_error("Native runtime returned an invalid error envelope")
@@ -100,6 +107,17 @@ def _parse(text, mode):
     if category in ("recursion_limit", "call_depth_limit"):
         raise ResourceLimitError(error)
     raise NativeRuntimeError(error)
+
+
+def _parse(text, mode):
+    return _call(text, lambda lib, source: lib.asciiunits_parse_json_v1(source, len(source), mode))
+
+
+def _parse_model(lib, source):
+    native = getattr(lib, "asciiunits_parse_model_json_v1", None)
+    if native is None:
+        raise _runtime_error("The AsciiUnits runtime was built without the typed models")
+    return native(source, len(source))
 
 
 def parse_shape(text):
@@ -118,3 +136,18 @@ def try_parse(text):
         return parse(text)
     except ParseError:
         return None
+
+
+def parse_model(text):
+    """Return the typed Asciiunits::Model::Document as its portable JSON.
+
+    The Rust core reads the capture tree through the LutaML models generated
+    from the Ruby model. Exact integers, such as a slice's offset, are decimal
+    strings. A grammar refusal raises ParseError.
+    """
+    return _call(text, _parse_model)
+
+
+def to_portable_json(model):
+    """Serialize a parse_model result the way the Rust core writes it."""
+    return json.dumps(model, ensure_ascii=False, separators=(",", ":"))

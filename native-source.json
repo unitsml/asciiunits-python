@@ -12,5 +12,5 @@
   "model_source_sha256": "03b4d13180f4ed5c528344e4cf397a67c86a4a69e8d276f991c68859d16f78c3",
   "mapper_dist_sha256": "1f295006530c218d28b5ad121755ee4852c9b5d95b4b91bce5eef2f87d2da5d7",
   "model_oracle_sha256": "ac1000c7e44528489bb87965ad318cd0b1613cd742209f5dff9f25c83e853d2c",
-  "native_source_commit": "e6758b85166f2aa3862a81ffb6133c0786478836"
+  "native_source_commit": "9298db9f44911ad16de439dafaf048522603cbd0"
 }

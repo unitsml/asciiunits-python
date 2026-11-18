@@ -3,7 +3,12 @@
 `parse_shape(text)` exposes the sealed edition-2 Parsanol captures.
 `parse(text)` returns the AsciiUnits structural model as JSON-compatible
 values. `try_parse(text)` returns `None` for a grammar refusal.
-`ParseError` includes original UTF-8 byte offsets. `ResourceLimitError`
+`parse_model(text)` returns the typed `Asciiunits::Model::Document` as its
+portable JSON. The Rust core builds it with the LutaML models generated from
+the Ruby model, so it holds the same captures as the Ruby gem's
+`Asciiunits.parse_model`. Exact integers, such as a slice's offset, are
+decimal strings. `to_portable_json(model)` writes that JSON as the Rust core
+does. `ParseError` includes original UTF-8 byte offsets. `ResourceLimitError`
 carries the native depth and budget. The platform wheel supplies the Rust
 library and verifies its digest before loading it.
 
