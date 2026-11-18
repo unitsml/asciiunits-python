@@ -71,7 +71,17 @@ jobs:
           path: .native
       - name: Build the wheel and install it in a fresh environment
         run: python scripts/ci.py install-wheel
+      - name: Check out the pinned shared corpus
+        uses: actions/checkout@v4
+        with:
+          repository: unitsml/asciiunits-testsuite
+          # Same commit as tests/corpus-pin.json; the test checks the bytes.
+          ref: 3f835ba8ea441de0c1081a4cd6a53ed52959f32c
+          path: asciiunits-testsuite
+          persist-credentials: false
       - name: Test every repository fixture against the installed wheel
+        env:
+          ASCIIUNITS_TESTSUITE: ${{ github.workspace }}/asciiunits-testsuite
         run: python scripts/ci.py test-installed
       - uses: actions/upload-artifact@v4
         if: always()

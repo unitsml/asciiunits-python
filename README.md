@@ -19,3 +19,7 @@ To build a host wheel with setuptools and wheel already installed:
 python scripts/build-wheel.py --rust-source ../asciiunits-rs \
   --target-dir ./build/native-target --wheel-dir ./dist
 ```
+
+The tests replay the shared corpus from unitsml/asciiunits-testsuite at the
+commit in `tests/corpus-pin.json`, and check its bytes against the pin. Set
+`ASCIIUNITS_TESTSUITE` to a checkout of that commit before running them.

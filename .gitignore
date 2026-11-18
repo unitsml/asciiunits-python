@@ -9,3 +9,4 @@ __pycache__/
 .native/
 .native-src/
 dist/
+/asciiunits-testsuite/
