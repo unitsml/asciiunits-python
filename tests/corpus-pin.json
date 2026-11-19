@@ -1,0 +1,8 @@
+{
+  "repository": "unitsml/asciiunits-testsuite",
+  "commit": "3f835ba8ea441de0c1081a4cd6a53ed52959f32c",
+  "path": "corpora/unitsml/corpus.json",
+  "sha256": "deacefbd7f320b554ae1d9998dadceaba29382aa8ba349f339eac67ab14fac0a",
+  "artifact_checksum": "sha256:3a5d423ea975d46e9ab4b98a652e9276849f540226466dbacdd5001b2f6a5016",
+  "checkout": "asciiunits-testsuite"
+}

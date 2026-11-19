@@ -7,19 +7,18 @@
     "kind": "cargo-build",
     "repository": "unitsml/asciiunits-rs",
     "local": "workspace/units-native/asciiunits-rs",
-    "revision": "1f771caef878b9d383a5f29b02f434b8b614b780",
+    "revision": "e6758b85166f2aa3862a81ffb6133c0786478836",
     "public": true,
     "deps": {
       "parsanol_rs": {
         "repository": "parsanol/parsanol-rs",
-        "revision": "5206a33b5417b4ecd3a601930461ed2967c871e7",
+        "revision": "8f8afd878a3e91b83e43c2005459bc9dc4927851",
         "public": true
       },
       "asciiunits_artifact": {
-        "repository": "unitsml/asciiunits-ts",
-        "revision": "ff147f2ddce859112bf4d6583374124979dedf08",
-        "public": false,
-        "note": "public once root pushes fork suleman-uzair/asciiunits-ts 521c0bd (U16 PR15 step 1)"
+        "repository": "unitsml/asciiunits",
+        "revision": "0780018c4ebbaf036dacde2ef5329e4f0834da94",
+        "public": true
       }
     }
   },
