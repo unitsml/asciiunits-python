@@ -65,13 +65,15 @@ def main():
             if package.get("license_file"):
                 files.add(base / package["license_file"])
             if package["name"] == "parsanol":
-                if not package["source"].endswith("#" + pins["parsanol"]):
+                if (package["source"] != "registry+https://github.com/rust-lang/crates.io-index"
+                        or package["version"] != pins["parsanol"]):
                     raise RuntimeError("Cargo resolved a different Parsanol source")
-                # The locked Parsanol crate is nested in its Git workspace.
-                files.update(path for path in base.parent.iterdir() if path.is_file()
-                             and path.name.upper().startswith(("LICENSE", "COPYING", "NOTICE")))
+                # The published crate ships no license file, only SPDX metadata in its
+                # Cargo.toml. Record that file; do not synthesize a license text.
                 if not files:
-                    raise RuntimeError("Parsanol's upstream license is missing")
+                    if not package.get("license"):
+                        raise RuntimeError("Parsanol has neither license text nor SPDX metadata")
+                    files.add(base / "Cargo.toml")
             recorded = {}
             for path in sorted(files):
                 destination = notices / name_version / path.name

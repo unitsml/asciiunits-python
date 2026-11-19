@@ -124,12 +124,12 @@ class InstalledRuntimeTests(unittest.TestCase):
     def test_build_receipt_and_parsanol_notice(self):
         native = files("asciiunits").joinpath("_native")
         info = json.loads(native.joinpath("build-info.json").read_bytes())
-        self.assertEqual(info["native_source_commit"], "9298db9f44911ad16de439dafaf048522603cbd0")
-        self.assertEqual(info["parsanol"], "8f8afd878a3e91b83e43c2005459bc9dc4927851")
-        self.assertEqual(info["cargo_lock_sha256"], "817843fcef51cc96dbf1657f9bdb19e09a2c803cc2cdd20543675ec2e3f43c84")
+        self.assertEqual(info["native_source_commit"], "5d917151d5ef6964015af696e3d69ca4ceea0f1a")
+        self.assertEqual(info["parsanol"], "1.5.9")
+        self.assertEqual(info["cargo_lock_sha256"], "50ce9a6d256cb9e659816b950e69dd99b9d63992aac18461b46306f3c112bd1d")
         notices = json.loads(native.joinpath("licenses", "manifest.json").read_bytes())
         parsanol = [row for row in notices if row["name"] == "parsanol"]
-        self.assertEqual([row["version"] for row in parsanol], ["0.20.14"])
+        self.assertEqual([row["version"] for row in parsanol], ["1.5.9"])
         self.assertTrue(parsanol[0]["notices"])
         for path in parsanol[0]["notices"]:
             self.assertTrue(native.joinpath("licenses", *path.replace("\\", "/").split("/")).is_file())
