@@ -28,6 +28,20 @@ def pinned_corpus():
     return corpus
 
 
+def portable(value):
+    """The tree as the portable typed-model JSON writes it: exact integers
+    (a slice's offset, length, line and column) are decimal strings."""
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, int):
+        return str(value)
+    if isinstance(value, list):
+        return [portable(item) for item in value]
+    if isinstance(value, dict):
+        return {key: portable(item) for key, item in value.items()}
+    return value
+
+
 class InstalledRuntimeTests(unittest.TestCase):
     def test_corpus_raw_models_and_syntax(self):
         corpus = pinned_corpus()
@@ -49,6 +63,37 @@ class InstalledRuntimeTests(unittest.TestCase):
                         asciiunits.parse_shape(text)
         self.assertEqual(count, 92)
         self.assertEqual(list(models), [])
+
+    def test_typed_models_replay_the_corpus(self):
+        corpus = pinned_corpus()
+        accepted = rejected = 0
+        for row in corpus["cases"]:
+            text = row["input"]
+            with self.subTest(text=text):
+                if row["kind"] == "accept":
+                    expected = {"expression": portable(row["parsanol_tree"])}
+                    model = asciiunits.parse_model(text)
+                    self.assertEqual(model, expected)
+                    self.assertEqual(json.loads(asciiunits.to_portable_json(model)), expected)
+                    accepted += 1
+                else:
+                    with self.assertRaises(asciiunits.ParseError):
+                        asciiunits.parse_model(text)
+                    rejected += 1
+        self.assertEqual((accepted, rejected), (92, 51))
+
+    def test_typed_model_json_text_and_budget(self):
+        model = asciiunits.parse_model("m")
+        self.assertEqual(model, {"expression": {"unit": {
+            "value": "m", "offset": "0", "length": "1", "line": "1", "column": "1"}}})
+        self.assertEqual(
+            asciiunits.to_portable_json(model),
+            '{"expression":{"unit":{"value":"m","offset":"0","length":"1","line":"1","column":"1"}}}',
+        )
+        with self.assertRaises(asciiunits.ResourceLimitError):
+            asciiunits.parse_model("m/" * 256 + "m")
+        with self.assertRaises(TypeError):
+            asciiunits.parse_model(b"m")
 
     def test_typed_refusal_budget_and_reuse(self):
         with self.assertRaises(asciiunits.ParseError) as refusal:
@@ -79,9 +124,9 @@ class InstalledRuntimeTests(unittest.TestCase):
     def test_build_receipt_and_parsanol_notice(self):
         native = files("asciiunits").joinpath("_native")
         info = json.loads(native.joinpath("build-info.json").read_bytes())
-        self.assertEqual(info["native_source_commit"], "e6758b85166f2aa3862a81ffb6133c0786478836")
+        self.assertEqual(info["native_source_commit"], "9298db9f44911ad16de439dafaf048522603cbd0")
         self.assertEqual(info["parsanol"], "8f8afd878a3e91b83e43c2005459bc9dc4927851")
-        self.assertEqual(info["cargo_lock_sha256"], "5efbbefeb95fba8730ad6421e13aa5c408f60d4684221445c45112f19f250b15")
+        self.assertEqual(info["cargo_lock_sha256"], "817843fcef51cc96dbf1657f9bdb19e09a2c803cc2cdd20543675ec2e3f43c84")
         notices = json.loads(native.joinpath("licenses", "manifest.json").read_bytes())
         parsanol = [row for row in notices if row["name"] == "parsanol"]
         self.assertEqual([row["version"] for row in parsanol], ["0.20.14"])

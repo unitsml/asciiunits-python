@@ -39,7 +39,8 @@ def main():
     target = args.target_dir.resolve()
     env["CARGO_TARGET_DIR"] = str(target)
     locked = ["--locked", *(["--offline"] if args.offline else [])]
-    subprocess.run([args.cargo, "build", *locked, "--jobs", "2"], cwd=source, env=env, check=True)
+    features = ["--features", "models"]
+    subprocess.run([args.cargo, "build", *locked, *features, "--jobs", "2"], cwd=source, env=env, check=True)
     name = "asciiunits.dll" if sys.platform == "win32" else (
         "libasciiunits.dylib" if sys.platform == "darwin" else "libasciiunits.so"
     )
@@ -48,7 +49,7 @@ def main():
     version = subprocess.check_output([rustc, "-vV"], text=True)
     host = next(line.removeprefix("host: ") for line in version.splitlines() if line.startswith("host: "))
     metadata = json.loads(subprocess.check_output(
-        [args.cargo, "metadata", *locked, "--format-version", "1", "--filter-platform", host],
+        [args.cargo, "metadata", *locked, *features, "--format-version", "1", "--filter-platform", host],
         cwd=source, env=env,
     ))
     with TemporaryDirectory(prefix="asciiunits-wheel-") as temporary:
